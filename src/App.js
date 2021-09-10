@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 // Components
-import Character from "./components/Character";
+import Gallery from "./components/Gallery";
 
 // Styles
 import "./App.css";
@@ -29,10 +29,7 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-      {swData.length === 0 && <p>LOADING</p>}
-      {swData.map((character, i) => {
-        return <Character key={i} characterData={character} />;
-      })}
+      <Gallery swData={swData} />
     </div>
   );
 };
