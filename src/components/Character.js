@@ -14,24 +14,28 @@ const StyledCharacter = styled.div`
 `;
 
 const Character = (props) => {
-  const { characterData, focusedCharacter, setFocusedCharacter, id } = props;
+  const { characterData, id } = props;
+  const [showDetails, setShowDetails] = useState(false);
 
   return (
     <StyledCharacter>
       <h2>{characterData.name}</h2>
-      {focusedCharacter === id ? (
-        <CharacterInfo
-          id={id}
-          height={characterData.height}
-          mass={characterData.mass}
-          hair_color={characterData.hair_color}
-          skin_color={characterData.skin_color}
-          eye_color={characterData.eye_color}
-          birth_year={characterData.birth_year}
-          gender={characterData.gender}
-        />
+      {showDetails ? (
+        <>
+          <CharacterInfo
+            id={id}
+            height={characterData.height}
+            mass={characterData.mass}
+            hair_color={characterData.hair_color}
+            skin_color={characterData.skin_color}
+            eye_color={characterData.eye_color}
+            birth_year={characterData.birth_year}
+            gender={characterData.gender}
+          />
+          <button onClick={() => setShowDetails(!showDetails)}>See more</button>
+        </>
       ) : (
-        <button onClick={setFocusedCharacter(id)}>See more</button>
+        <button onClick={() => setShowDetails(!showDetails)}>See more</button>
       )}
     </StyledCharacter>
   );

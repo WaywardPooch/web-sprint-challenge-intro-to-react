@@ -18,28 +18,11 @@ const Gallery = (props) => {
   const { swData } = props;
   const [galleryContent, setGalleryContent] = useState(["LOADING"]);
 
-  const [focusedCharacter, setFocusedCharacter] = useState(null);
-  // Add open/close details methods
-  const expandInfo = (characterID) => {
-    setFocusedCharacter(characterID);
-  };
-  const closeInfo = () => {
-    setFocusedCharacter(null);
-  };
-
   useEffect(() => {
     if (Array.isArray(swData.results)) {
       setGalleryContent(
         swData.results.map((character, i) => {
-          return (
-            <Character
-              key={i}
-              id={i}
-              focusedCharacter={focusedCharacter}
-              setFocusedCharacter={setFocusedCharacter}
-              characterData={character}
-            />
-          );
+          return <Character key={i} id={i} characterData={character} />;
         })
       );
     } else {
