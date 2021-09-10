@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 // Import Components
 import Character from "./Character";
+import LoadingScreen from "./Loading";
 
 // Set Styles
 const StyledGallery = styled.section`
@@ -13,20 +14,21 @@ const StyledGallery = styled.section`
   max-width: 48rem;
 `;
 
-// Export Component
 const Gallery = (props) => {
   const { swData } = props;
-  const [galleryContent, setGalleryContent] = useState(["LOADING"]);
+  const [galleryContent, setGalleryContent] = useState([
+    <LoadingScreen key={0} />,
+  ]);
 
   useEffect(() => {
-    if (Array.isArray(swData.results)) {
+    if (swData) {
       setGalleryContent(
-        swData.results.map((character, i) => {
+        swData.map((character, i) => {
           return <Character key={i} characterData={character} />;
         })
       );
     } else {
-      setGalleryContent(["LOADING"]);
+      setGalleryContent([<LoadingScreen key={0} />]);
     }
   }, [swData]);
 
