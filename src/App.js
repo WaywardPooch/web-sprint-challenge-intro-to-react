@@ -8,7 +8,7 @@ import Gallery from "./components/Gallery";
 // Styles
 import "./App.css";
 
-const App = () => {
+export default function App() {
   // Set States
   const [swData, setSwData] = useState([]);
 
@@ -22,7 +22,9 @@ const App = () => {
       .catch((error) => {
         console.error(error);
       })
-      .finally(console.log("GET request attempted!"));
+      .finally(() => {
+        console.log("GET request attempted!");
+      });
   }, []);
 
   // Return Markup
@@ -32,6 +34,4 @@ const App = () => {
       <Gallery swData={swData} />
     </div>
   );
-};
-
-export default App;
+}

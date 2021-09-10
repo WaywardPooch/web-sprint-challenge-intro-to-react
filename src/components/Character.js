@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledCharacter = styled.div`
-  background-color: rgba(255, 255, 255, 100);
+  background-color: #eeeeee88;
   border-bottom: solid 2px black;
-  max-width: 48rem;
+  width: 100%;
   padding: 1rem 0;
   h2 {
     font-size: 3rem;
