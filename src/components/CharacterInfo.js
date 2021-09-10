@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledDetails = styled.div``;
+const StyledDetails = styled.div`
+  font-size: 2rem;
+  padding: 2rem;
+`;
 
 const CharacterInfo = (props) => {
   const {
-    id,
     height,
     mass,
     hair_color,
@@ -13,11 +15,10 @@ const CharacterInfo = (props) => {
     eye_color,
     birth_year,
     gender,
-  } = props;
+  } = props.characterData;
 
   return (
     <StyledDetails>
-      <p>ID: {id}</p>
       <p>Gender: {gender}</p>
       <p>Birth Year: {birth_year}</p>
       <p>Height: {height}</p>

@@ -22,7 +22,7 @@ const Gallery = (props) => {
     if (Array.isArray(swData.results)) {
       setGalleryContent(
         swData.results.map((character, i) => {
-          return <Character key={i} id={i} characterData={character} />;
+          return <Character key={i} characterData={character} />;
         })
       );
     } else {

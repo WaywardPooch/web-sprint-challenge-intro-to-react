@@ -14,7 +14,7 @@ const StyledCharacter = styled.div`
 `;
 
 const Character = (props) => {
-  const { characterData, id } = props;
+  const { characterData } = props;
   const [showDetails, setShowDetails] = useState(false);
 
   return (
@@ -22,20 +22,15 @@ const Character = (props) => {
       <h2>{characterData.name}</h2>
       {showDetails ? (
         <>
-          <CharacterInfo
-            id={id}
-            height={characterData.height}
-            mass={characterData.mass}
-            hair_color={characterData.hair_color}
-            skin_color={characterData.skin_color}
-            eye_color={characterData.eye_color}
-            birth_year={characterData.birth_year}
-            gender={characterData.gender}
-          />
-          <button onClick={() => setShowDetails(!showDetails)}>See more</button>
+          <CharacterInfo characterData={characterData} />
+          <button onClick={() => setShowDetails(!showDetails)}>
+            Hide Info
+          </button>
         </>
       ) : (
-        <button onClick={() => setShowDetails(!showDetails)}>See more</button>
+        <button onClick={() => setShowDetails(!showDetails)}>
+          See details
+        </button>
       )}
     </StyledCharacter>
   );
