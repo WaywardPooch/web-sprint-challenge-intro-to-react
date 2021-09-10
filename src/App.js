@@ -9,7 +9,7 @@ import Gallery from "./components/Gallery";
 // Styles
 import "./App.css";
 
-export default function App() {
+const App = () => {
   // Set States
   const [swData, setSwData] = useState([]);
 
@@ -35,4 +35,6 @@ export default function App() {
       <Gallery swData={swData} />
     </div>
   );
-}
+};
+
+export default App;
