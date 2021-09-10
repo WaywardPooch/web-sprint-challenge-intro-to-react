@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 // Components
+import Header from "./components/Header";
 import Gallery from "./components/Gallery";
 
 // Styles
@@ -30,7 +31,7 @@ export default function App() {
   // Return Markup
   return (
     <div className="App">
-      <h1 className="Header">Characters</h1>
+      <Header />
       <Gallery swData={swData} />
     </div>
   );

@@ -17,14 +17,9 @@ const StyledGallery = styled.section`
 export default function Gallery(props) {
   const { swData } = props;
   const [galleryContent, setGalleryContent] = useState(["LOADING"]);
+
   useEffect(() => {
-    if (Array.isArray(swData)) {
-      setGalleryContent(
-        swData.map((character, i) => {
-          return <Character key={i} characterData={character} />;
-        })
-      );
-    } else if (Array.isArray(swData.results)) {
+    if (Array.isArray(swData.results)) {
       setGalleryContent(
         swData.results.map((character, i) => {
           return <Character key={i} characterData={character} />;
