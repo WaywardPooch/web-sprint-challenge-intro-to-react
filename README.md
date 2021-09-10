@@ -83,6 +83,17 @@ After finishing your required elements, you can push your work further. These go
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
-1. Describe component state.
-1. Describe props.
-1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+   React JS is a JavaScript library that makes it easy to create modular components for our websites by allowing us to write markup inside our JavaScript components using JSX, an xml-like language, instead of having to constantly worry about DOM manipulation. It handles the re-rendering of components when they need to be visually updated for us.
+
+2. Describe component state.
+
+   Component states are a system that lets us record and manipulate components when they are in a "phase" we want to keep track of. We can use them to remember things like whether or not a button is toggled on or off, or to change things like the active data set we are working with.
+
+3. Describe props.
+
+   Props, short for "properties," are javascript objects that store values for when we want to pass down data to child components from parent components.
+
+4. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+   Side effects in React are things inside of a component that try to alter things outside of that component's scope. We create them when we want to perform actions like making network requests or explicitly updating the DOM. We use the `useEffect(()=>{thingsToDo}, [things,to,watch])` hook, with a second argument being an array of states or properties to watch for changes in, in order to sync effects to changes in said state or property.
